@@ -3,6 +3,7 @@
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/microservices/aggregator-microservice" />
+    <file type="web" url="file://$PROJECT_DIR$/microservices/config-server-microservice" />
     <file type="web" url="file://$PROJECT_DIR$/microservices/humidity-microservice" />
     <file type="web" url="file://$PROJECT_DIR$/microservices/temperature-microservice" />
   </component>
