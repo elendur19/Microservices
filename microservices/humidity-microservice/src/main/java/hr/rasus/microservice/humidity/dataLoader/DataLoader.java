@@ -19,7 +19,7 @@ import java.util.List;
 public class DataLoader implements ApplicationRunner {
 
     private final HumidityRepo humidityRepo;
-    private static final String csvFileLocation = "C:\\Users\\misla\\fer\\1.semestar_diplomski\\RASUS\\lab_prof\\mjerenja.csv";
+    private static final String csvFileLocation = "mjerenja.csv";
     private List<String> readings = new ArrayList<>();
 
     @Autowired
