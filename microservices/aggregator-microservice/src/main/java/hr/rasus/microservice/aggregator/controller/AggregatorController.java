@@ -2,7 +2,6 @@ package hr.rasus.microservice.aggregator.controller;
 
 import hr.rasus.microservice.aggregator.model.AggregatedRepresentation;
 import hr.rasus.microservice.aggregator.service.AggregatorService;
-import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,7 +13,7 @@ public class AggregatorController {
 
     private final AggregatorService aggregatorService;
 
-    @Value("${pozdrav}")
+    @Value("${temp-unit: default-unit}")
     private String tempUnit;
 
     public AggregatorController(AggregatorService aggregatorService) {
