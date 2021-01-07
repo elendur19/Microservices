@@ -4,6 +4,7 @@ import hr.rasus.microservice.humidity.model.HumidityRepresentation;
 import hr.rasus.microservice.humidity.repo.HumidityRepo;
 import hr.rasus.microservice.humidity.entity.Humidity;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -13,6 +14,9 @@ import java.time.LocalDateTime;
 public class HumidityServiceImpl implements HumidityService{
 
     private final HumidityRepo humidityRepo;
+
+    @Value("${temperatureUnit}")
+    private String temperatureUnit;
 
     @Override
     public HumidityRepresentation getHumidity() {

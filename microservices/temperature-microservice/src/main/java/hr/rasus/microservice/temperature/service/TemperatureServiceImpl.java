@@ -4,6 +4,7 @@ import hr.rasus.microservice.temperature.entity.Temperature;
 import hr.rasus.microservice.temperature.repo.MeasurementRepo;
 import hr.rasus.microservice.temperature.model.TemperatureRepresentation;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -13,6 +14,9 @@ import java.time.LocalDateTime;
 public class TemperatureServiceImpl implements TemperatureService{
 
     private final MeasurementRepo measurementRepo;
+
+    @Value("${temperatureUnit}")
+    private String temperatureUnit;
 
     @Override
     public TemperatureRepresentation getTemperature() {
