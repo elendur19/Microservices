@@ -18,4 +18,5 @@ docker run -p 8081:8081 temperature-microservice
 ```
 1. Create environment variables gitUsername and gitPassword
 2. check application.properties file in config-server-microservice
+It will take values from config/application.yml file 
 ```
