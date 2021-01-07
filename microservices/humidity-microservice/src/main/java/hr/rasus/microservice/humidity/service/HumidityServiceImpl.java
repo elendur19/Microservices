@@ -20,7 +20,7 @@ public class HumidityServiceImpl implements HumidityService{
         LocalDateTime now = LocalDateTime.now();
         int hour = now.getHour();
         int minute = now.getMinute();
-        long id = 4 * hour + (minute / 15) + 2;
+        long id = 4 * hour + (minute / 15);
         Humidity measurement = humidityRepo.findById(id);
         humidityRepresentation.setHumidity(measurement.getHumidity());
 

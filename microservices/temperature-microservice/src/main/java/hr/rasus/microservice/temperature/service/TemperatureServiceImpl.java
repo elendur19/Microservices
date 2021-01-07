@@ -20,7 +20,7 @@ public class TemperatureServiceImpl implements TemperatureService{
         LocalDateTime now = LocalDateTime.now();
         int hour = now.getHour();
         int minute = now.getMinute();
-        long id = 4 * hour + (minute / 15) +2;
+        long id = 4 * hour + (minute / 15);
         Temperature measurement = measurementRepo.findById(id);
         temperatureRepresentation.setTemperature(measurement.getTemperature());
         return temperatureRepresentation;
