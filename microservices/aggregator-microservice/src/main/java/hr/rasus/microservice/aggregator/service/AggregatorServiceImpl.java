@@ -1,24 +1,15 @@
 package hr.rasus.microservice.aggregator.service;
 
 import hr.rasus.microservice.aggregator.RestTemplateImplementation;
-import hr.rasus.microservice.aggregator.ex.ErrorResponse;
 import hr.rasus.microservice.aggregator.ex.WrongTemperatureUnitException;
 import hr.rasus.microservice.aggregator.model.AggregatedRepresentation;
 import hr.rasus.microservice.aggregator.model.HumidityRepresentation;
 import hr.rasus.microservice.aggregator.model.TemperatureRepresentation;
-import lombok.AllArgsConstructor;
 
 import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.client.ResponseExtractor;
 
-import java.util.ArrayList;
-import java.util.List;
 
 @Service
 public class AggregatorServiceImpl {
@@ -37,7 +28,7 @@ public class AggregatorServiceImpl {
     @Value("${humidity-url}")
     private final String humidityUrl;
 
-    @Value("${temp-unit}")
+    @Value("${temperatureUnit}")
     private String temperatureUnit;
 
     public AggregatedRepresentation getAggregatedMeasurements() {

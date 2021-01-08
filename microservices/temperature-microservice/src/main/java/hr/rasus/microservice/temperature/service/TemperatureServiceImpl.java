@@ -10,13 +10,17 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
 
 @Service
-@AllArgsConstructor
 public class TemperatureServiceImpl implements TemperatureService{
 
     private final MeasurementRepo measurementRepo;
 
     @Value("${temperatureUnit}")
     private String temperatureUnit;
+
+    private TemperatureServiceImpl(MeasurementRepo measurementRepo) {
+        this.measurementRepo = measurementRepo;
+        this.temperatureUnit = null;
+    }
 
     @Override
     public TemperatureRepresentation getTemperature() {
