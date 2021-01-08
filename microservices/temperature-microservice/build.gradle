@@ -10,7 +10,7 @@ version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 jib.to.image = 'temperature-microservice'
 jib.extraDirectories.paths = ["/home/huginn/faks/rassus/lab_prof/resources"]
-
+jib.container.jvmFlags = ['-Djava.security.edg=file:/dev/./urandom']
 
 configurations {
     compileOnly {

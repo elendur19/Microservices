@@ -1,0 +1,32 @@
+version: '3.7'
+services:
+  #  aggregator-ms:
+  #    hostname: aggregator
+  #    image: aggregator-microservice
+  #    ports:
+  #      - 8080:8080
+  #  temperature-ms:
+  #    hostname: temperature
+  #    image: temperature-microservice
+  #    ports:
+  #      - 8081:8081
+  #  humidity-ms:
+  #    hostname: humidity
+  #    image: humidity-microservice
+  #    ports:
+  #      - 8084:8084
+  eureka-server:
+    hostname: eureka
+    image: eureka-server
+    ports: 
+      - 8761:8761
+  config-server-ms:
+    hostname: config-server
+    image: config-server-microservice
+    ports:
+      - 8888:8888
+
+networks:
+  default:
+    external:
+      name: microservices

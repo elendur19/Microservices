@@ -9,7 +9,7 @@ group = 'hr.rasus.config_server'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 jib.to.image = 'config-server-microservice'
-jib.extraDirectories.paths = ["/home/huginn/faks/rassus/lab_prof/resources"]
+jib.extraDirectories.paths = ["/home/huginn/faks/rassus/lab_prof/config"]
 
 configurations {
     compileOnly {
