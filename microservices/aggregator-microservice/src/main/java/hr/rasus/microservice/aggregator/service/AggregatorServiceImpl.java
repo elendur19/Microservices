@@ -21,11 +21,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class AggregatorService {
+public class AggregatorServiceImpl {
 
     private final RestTemplateImplementation restTemplateImplementation;
 
-    public AggregatorService(RestTemplateImplementation restTemplateImplementation) {
+    public AggregatorServiceImpl(RestTemplateImplementation restTemplateImplementation) {
         this.restTemplateImplementation = restTemplateImplementation;
         temperatureUrl = null;
         humidityUrl = null;
@@ -37,7 +37,7 @@ public class AggregatorService {
     @Value("${humidity-url}")
     private final String humidityUrl;
 
-    @Value("${temperature-unit}")
+    @Value("${temp-unit}")
     private String temperatureUnit;
 
     public AggregatedRepresentation getAggregatedMeasurements() {
