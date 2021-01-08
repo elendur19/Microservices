@@ -14,11 +14,10 @@
       </GradleProjectSettings>
       <GradleProjectSettings>
         <option name="distributionType" value="DEFAULT_WRAPPED" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/microservices/eureka-server" />
-        <option name="gradleHome" value="/usr/share/java/gradle" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/microservices/config-server-microservice" />
         <option name="modules">
           <set>
-            <option value="$PROJECT_DIR$/microservices/eureka-server" />
+            <option value="$PROJECT_DIR$/microservices/config-server-microservice" />
           </set>
         </option>
       </GradleProjectSettings>
