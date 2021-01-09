@@ -20,11 +20,11 @@ public class RestTemplateImplementation {
     }
 
 
-    public TemperatureRepresentation getTemperatureRepresentation(String baseUrl) {
-        return restTemplate.getForObject(baseUrl + "/current-reading", TemperatureRepresentation.class);
+    public TemperatureRepresentation getTemperatureRepresentation(String temperatureUri) {
+        return restTemplate.getForObject(temperatureUri + "/current-reading", TemperatureRepresentation.class);
     }
 
-    public HumidityRepresentation getHumidityRepresentation(String baseUrl) {
-        return restTemplate.getForObject(baseUrl + "/current-reading", HumidityRepresentation.class);
+    public HumidityRepresentation getHumidityRepresentation(String humidityUri) {
+        return restTemplate.getForObject(humidityUri + "/current-reading", HumidityRepresentation.class);
     }
 }
