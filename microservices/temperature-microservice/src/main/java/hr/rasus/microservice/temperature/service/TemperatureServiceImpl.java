@@ -3,7 +3,6 @@ package hr.rasus.microservice.temperature.service;
 import hr.rasus.microservice.temperature.entity.Temperature;
 import hr.rasus.microservice.temperature.repo.MeasurementRepo;
 import hr.rasus.microservice.temperature.model.TemperatureRepresentation;
-import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
