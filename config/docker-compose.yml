@@ -1,0 +1,65 @@
+---
+version: '3.7'
+services:
+  aggregator-ms:
+    hostname: aggregator
+    image: aggregator-microservice
+    ports:
+      - 8080:8080
+    depends_on:
+    - "temperature-ms"
+    entrypoint: ["/bin/bash" , "-c"]
+    command:
+    - |
+       chmod +x /wait-for-it.sh
+       /wait-for-it.sh temperature-ms:8081 -t 60
+       /wait-for-it.sh humidity-ms:8084 -t 60
+       java -cp /app/resources:/app/classes:/app/libs/* hr.rasus.microservice.aggregator.AggregatorMicroserviceApplication
+  temperature-ms:
+    hostname: temperature-ms
+    image: temperature-microservice
+    ports:
+      - 8081:8081
+    depends_on:
+    - "eureka-server"
+    entrypoint: ["/bin/bash" , "-c"]
+    command:
+    - |
+       chmod +x /wait-for-it.sh
+       /wait-for-it.sh eureka-server:8761 -t 60
+       java -cp /app/resources:/app/classes:/app/libs/* hr.rasus.microservice.temperature.TemperatureMicroserviceApplication
+  humidity-ms:
+    hostname: humidity-ms
+    image: humidity-microservice
+    ports:
+      - 8084:8084
+    depends_on:
+    - "eureka-server"
+    entrypoint: ["/bin/bash" , "-c"]
+    command:
+    - |
+       chmod +x /wait-for-it.sh
+       /wait-for-it.sh eureka-server:8761 -t 60 
+       java -cp /app/resources:/app/classes:/app/libs/* hr.rasus.microservice.humidity.HumidityMicroserviceApplication
+  eureka-server:
+    image: eureka-server
+    ports: 
+      - 8761:8761
+    depends_on:
+      - config-server
+    entrypoint: ["/bin/bash" , "-c"]
+    command:
+    - |
+       chmod +x /wait-for-it.sh
+       /wait-for-it.sh config-server:8888 -t 60
+       java -cp /app/resources:/app/classes:/app/libs/* hr.rasus.eurekaserver.EurekaServerApplication
+  config-server:
+    hostname: config-server
+    image: config-server-microservice
+    ports:
+      - 8888:8888
+
+networks:
+  default:
+    external:
+      name: microservices

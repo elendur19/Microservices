@@ -9,8 +9,8 @@ group = 'hr.rasus'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 jib.to.image = 'temperature-microservice'
-jib.extraDirectories.paths = ["/home/huginn/faks/rassus/lab_prof/resources"]
-jib.container.jvmFlags = ['-Djava.security.edg=file:/dev/./urandom']
+jib.extraDirectories.paths = ["src/main/resources"]
+jib.from.image = 'openjdk:11.0.9-jre'
 
 configurations {
     compileOnly {

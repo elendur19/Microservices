@@ -1,4 +1,4 @@
-temperatureUnit: noUnit
+temperatureUnit: Kelvin
 name:
   temperature: temperature-ms
   humidity: humidity-ms
